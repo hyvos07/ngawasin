@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-Black.eot');
+    src: local('Kinetika Black'), local('Kinetika-Black'),
+        url('Kinetika-Black.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-Black.woff2') format('woff2'),
+        url('Kinetika-Black.woff') format('woff'),
+        url('Kinetika-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-Bold.eot');
+    src: local('Kinetika Bold'), local('Kinetika-Bold'),
+        url('Kinetika-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-Bold.woff2') format('woff2'),
+        url('Kinetika-Bold.woff') format('woff'),
+        url('Kinetika-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kinetika Book';
+    src: url('Kinetika-Book.eot');
+    src: local('Kinetika Book'), local('Kinetika-Book'),
+        url('Kinetika-Book.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-Book.woff2') format('woff2'),
+        url('Kinetika-Book.woff') format('woff'),
+        url('Kinetika-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-BoldItalic.eot');
+    src: local('Kinetika Bold Italic'), local('Kinetika-BoldItalic'),
+        url('Kinetika-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-BoldItalic.woff2') format('woff2'),
+        url('Kinetika-BoldItalic.woff') format('woff'),
+        url('Kinetika-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kinetika Book';
+    src: url('Kinetika-BookItalic.eot');
+    src: local('Kinetika Book Italic'), local('Kinetika-BookItalic'),
+        url('Kinetika-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-BookItalic.woff2') format('woff2'),
+        url('Kinetika-BookItalic.woff') format('woff'),
+        url('Kinetika-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-BlackItalic.eot');
+    src: local('Kinetika Black Italic'), local('Kinetika-BlackItalic'),
+        url('Kinetika-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-BlackItalic.woff2') format('woff2'),
+        url('Kinetika-BlackItalic.woff') format('woff'),
+        url('Kinetika-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-RegularItalic.eot');
+    src: local('Kinetika Italic'), local('Kinetika-RegularItalic'),
+        url('Kinetika-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-RegularItalic.woff2') format('woff2'),
+        url('Kinetika-RegularItalic.woff') format('woff'),
+        url('Kinetika-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-Heavy.eot');
+    src: local('Kinetika Heavy'), local('Kinetika-Heavy'),
+        url('Kinetika-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-Heavy.woff2') format('woff2'),
+        url('Kinetika-Heavy.woff') format('woff'),
+        url('Kinetika-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-HeavyItalic.eot');
+    src: local('Kinetika Heavy Italic'), local('Kinetika-HeavyItalic'),
+        url('Kinetika-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-HeavyItalic.woff2') format('woff2'),
+        url('Kinetika-HeavyItalic.woff') format('woff'),
+        url('Kinetika-HeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kinetika Semi';
+    src: url('Kinetika-SemiBold.eot');
+    src: local('Kinetika Semi Bold'), local('Kinetika-SemiBold'),
+        url('Kinetika-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-SemiBold.woff2') format('woff2'),
+        url('Kinetika-SemiBold.woff') format('woff'),
+        url('Kinetika-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-Light.eot');
+    src: local('Kinetika Light'), local('Kinetika-Light'),
+        url('Kinetika-Light.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-Light.woff2') format('woff2'),
+        url('Kinetika-Light.woff') format('woff'),
+        url('Kinetika-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kinetika Semi';
+    src: url('Kinetika-SemiBoldItalic.eot');
+    src: local('Kinetika Semi Bold Italic'), local('Kinetika-SemiBoldItalic'),
+        url('Kinetika-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-SemiBoldItalic.woff2') format('woff2'),
+        url('Kinetika-SemiBoldItalic.woff') format('woff'),
+        url('Kinetika-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kinetika Ultra';
+    src: url('Kinetika-Ultra.eot');
+    src: local('Kinetika Ultra'), local('Kinetika-Ultra'),
+        url('Kinetika-Ultra.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-Ultra.woff2') format('woff2'),
+        url('Kinetika-Ultra.woff') format('woff'),
+        url('Kinetika-Ultra.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-LightItalic.eot');
+    src: local('Kinetika Light Italic'), local('Kinetika-LightItalic'),
+        url('Kinetika-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-LightItalic.woff2') format('woff2'),
+        url('Kinetika-LightItalic.woff') format('woff'),
+        url('Kinetika-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-Medium.eot');
+    src: local('Kinetika Medium'), local('Kinetika-Medium'),
+        url('Kinetika-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-Medium.woff2') format('woff2'),
+        url('Kinetika-Medium.woff') format('woff'),
+        url('Kinetika-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-ThinItalic.eot');
+    src: local('Kinetika Thin Italic'), local('Kinetika-ThinItalic'),
+        url('Kinetika-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-ThinItalic.woff2') format('woff2'),
+        url('Kinetika-ThinItalic.woff') format('woff'),
+        url('Kinetika-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-Thin.eot');
+    src: local('Kinetika Thin'), local('Kinetika-Thin'),
+        url('Kinetika-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-Thin.woff2') format('woff2'),
+        url('Kinetika-Thin.woff') format('woff'),
+        url('Kinetika-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-Regular.eot');
+    src: local('Kinetika'), local('Kinetika-Regular'),
+        url('Kinetika-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-Regular.woff2') format('woff2'),
+        url('Kinetika-Regular.woff') format('woff'),
+        url('Kinetika-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kinetika Ultra';
+    src: url('Kinetika-UltraItalic.eot');
+    src: local('Kinetika Ultra Italic'), local('Kinetika-UltraItalic'),
+        url('Kinetika-UltraItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-UltraItalic.woff2') format('woff2'),
+        url('Kinetika-UltraItalic.woff') format('woff'),
+        url('Kinetika-UltraItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kinetika';
+    src: url('Kinetika-MediumItalic.eot');
+    src: local('Kinetika Medium Italic'), local('Kinetika-MediumItalic'),
+        url('Kinetika-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kinetika-MediumItalic.woff2') format('woff2'),
+        url('Kinetika-MediumItalic.woff') format('woff'),
+        url('Kinetika-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
