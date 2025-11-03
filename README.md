@@ -60,4 +60,6 @@ Some future plans on what I will add:
 
 <br>
 
-###### <center> Ngawasin by dnlmn </center>
+<div align="center">
+    <h6>Made with <strong>vibe</strong> 😎 by dnlmn</h6>
+</div>
