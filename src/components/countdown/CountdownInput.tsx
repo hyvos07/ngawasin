@@ -37,7 +37,7 @@ export default function CountdownInput() {
 
         const formattedDateTime = `${year}${month}${day}_${hours}:${minutes}:${seconds}`;
         
-        window.location.href = `/countdown/${formattedDateTime}`;
+        window.location.href = `/countdown?time=${formattedDateTime}`;
     };
 
     const getTodayDate = () => {
