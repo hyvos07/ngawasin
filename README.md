@@ -51,6 +51,9 @@ Navigate to `/` for a clean clock and notes interface.
 ### Brainrot Mode
 Navigate to `/brainrot` for the same features with an accompanying endless minecraft parkour.
 
+### [ NEW ] Countdown
+Navigate to `/countdown` for a countdown to specific time and date.
+
 ## 📝 Future Plans
 
 Some future plans on what I will add:
