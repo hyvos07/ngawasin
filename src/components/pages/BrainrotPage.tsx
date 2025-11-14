@@ -19,7 +19,6 @@ export default function BrainrotPage() {
                 </div>
             </div>
 
-            {/* Main content - shown on large screens (1024px+) */}
             <div className="hidden lg:flex h-screen p-4 justify-center items-center gap-12">
                 <div className="flex flex-col items-center text-4xl m-8 gap-8">
                     <Clock fontSize={200} />
@@ -30,9 +29,9 @@ export default function BrainrotPage() {
                     <iframe
                         width="354"
                         height="630"
-                        src="https://www.youtube.com/embed/tCBOhczn6Ok?si=zWs7zSM_Tbqs1X2D&autoplay=1&loop=1&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&vq=hd1080"
+                        src="https://www.youtube.com/embed/tCBOhczn6Ok?autoplay=1&loop=1&playlist=tCBOhczn6Ok&controls=0&showinfo=0&rel=0&mute=1&vq=hd1080p"
                         title="YouTube video player"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+                        allow="autoplay"
                         allowFullScreen
                         className="rounded-lg shadow-lg"
                     ></iframe>
