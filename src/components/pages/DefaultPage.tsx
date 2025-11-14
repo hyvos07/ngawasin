@@ -19,7 +19,6 @@ export default function DefaultPage() {
                 </div>
             </div>
 
-            {/* Main content - shown on large screens (1024px+) */}
             <div className="hidden lg:flex h-screen p-4 justify-center items-center gap-8">
                 <div className="flex flex-col items-center text-4xl m-8 gap-8">
                     <Clock fontSize={180} />
