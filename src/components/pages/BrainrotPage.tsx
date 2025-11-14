@@ -4,7 +4,6 @@ import Notes from "../notes/Notes";
 export default function BrainrotPage() {
     return (
         <>
-            {/* Small screen warning - shown on mobile/small tablets */}
             <div className="lg:hidden flex h-screen items-center justify-center p-8 bg-gray-900">
                 <div className="text-center">
                     <h1 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: 'Kinetika' }}>
