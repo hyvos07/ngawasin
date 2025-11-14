@@ -166,6 +166,19 @@ export default function Countdown({ targetDate }: CountdownProps) {
                     <Notes fontSize={32} />
                 )}
             </div>
+
+			<div className="hidden lg:block fixed bottom-8 left-8">
+				<a 
+					href="/countdown" 
+					className="px-6 py-3 text-xl font-bold bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition-colors"
+					style={{ fontFamily: 'Kinetika' }}
+				>
+					← 
+					<div className="ml-2 inline" style={{ fontFamily: 'Kinetika' }}>
+						New Countdown
+					</div>
+				</a>
+			</div>
         </div>
     );
 }
