@@ -51,14 +51,16 @@ Navigate to `/` for a clean clock and notes interface.
 ### Brainrot Mode
 Navigate to `/brainrot` for the same features with an accompanying endless minecraft parkour.
 
-### [ NEW ] Countdown
+### Countdown
 Navigate to `/countdown` for a countdown to specific time and date.
+
+### Plain Mode
+Navigate to `/plain` for a full clock-only mode. This page, specifically, will work on *(moderate size)* landscape view phone so that you can use this site in your mobile device.
 
 ## 📝 Future Plans
 
 Some future plans on what I will add:
 - Progress bar instead of usual clock, to act as a timer with a real-time clock
-- A full clock only mode
 - **[Niche Feature]** Score leaderboard, since I mainly need this site in a programming contest/lab session that use an online grader.
 
 <br>
