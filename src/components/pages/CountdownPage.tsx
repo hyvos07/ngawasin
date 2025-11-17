@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Countdown from './Countdown';
-import CountdownInput from './CountdownInput';
+import Countdown from '../countdown/Countdown';
+import CountdownInput from '../countdown/CountdownInput';
 
 export default function CountdownPage() {
     const [targetDate, setTargetDate] = useState<Date | null>(null);
