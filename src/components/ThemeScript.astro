@@ -1,0 +1,4 @@
+<script is:inline>
+    const storedTheme = localStorage.getItem('ngawasin-theme');
+    document.documentElement.dataset.theme = storedTheme === 'dark' ? 'dark' : 'light';
+</script>

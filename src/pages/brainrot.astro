@@ -1,5 +1,7 @@
 ---
 import BrainrotPage from '../components/pages/BrainrotPage';
+import ThemeScript from '../components/ThemeScript.astro';
+import ThemeToggle from '../components/ThemeToggle';
 import '../styles/global.css';
 ---
 
@@ -10,8 +12,10 @@ import '../styles/global.css';
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Ngawasin | Brainrot</title>
+		<ThemeScript />
 	</head>
-	<body>
+	<body class="toggle-hidden-below-lg">
+		<ThemeToggle client:load />
 		<BrainrotPage client:load />
 	</body>
 </html>

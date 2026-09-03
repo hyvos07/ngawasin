@@ -1,5 +1,7 @@
 ---
 import CountdownPage from '../components/pages/CountdownPage';
+import ThemeScript from '../components/ThemeScript.astro';
+import ThemeToggle from '../components/ThemeToggle';
 import '../styles/global.css';
 ---
 
@@ -10,8 +12,10 @@ import '../styles/global.css';
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Ngawasin | Countdown</title>
+		<ThemeScript />
 	</head>
-	<body>
+	<body class="toggle-hidden-below-lg">
+		<ThemeToggle client:load />
 		<div class="lg:hidden flex h-screen items-center justify-center p-8 bg-gray-900">
 			<div class="text-center">
 				<h1 class="text-3xl font-bold text-white mb-4" style="font-family: Kinetika;">
