@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from "react";
+import type { Orientation } from "./videos";
 
 interface YouTubeShortProps {
     videoId: string;
     width: number;
     height: number;
+    orientation?: Orientation;
+    // Called when the video finishes. Without it the video replays itself.
+    onEnded?: () => void;
 }
 
 interface YTPlayer {
@@ -66,9 +70,14 @@ function loadYouTubeApi(): Promise<YTNamespace> {
     return apiPromise;
 }
 
-export default function YouTubeShort({ videoId, width, height }: YouTubeShortProps) {
+export default function YouTubeShort({ videoId, width, height, orientation = "portrait", onEnded }: YouTubeShortProps) {
+    // Landscape videos are rendered at full 16:9 size and center-cropped to fill the portrait box.
+    const playerWidth = orientation === "landscape" ? Math.round((height * 16) / 9) : width;
     const mountRef = useRef<HTMLDivElement>(null);
     const [playing, setPlaying] = useState(false);
+    // Kept in a ref so a new callback each render doesn't tear down the player.
+    const onEndedRef = useRef(onEnded);
+    onEndedRef.current = onEnded;
 
     useEffect(() => {
         let player: YTPlayer | null = null;
@@ -85,7 +94,7 @@ export default function YouTubeShort({ videoId, width, height }: YouTubeShortPro
             if (cancelled) return;
             player = new YT.Player(target, {
                 videoId,
-                width,
+                width: playerWidth,
                 height: height + CROP_PX * 2,
                 playerVars: {
                     autoplay: 1,
@@ -94,8 +103,6 @@ export default function YouTubeShort({ videoId, width, height }: YouTubeShortPro
                     disablekb: 1,
                     fs: 0,
                     rel: 0,
-                    loop: 1,
-                    playlist: videoId, // required for loop to work on a single video
                     iv_load_policy: 3,
                     modestbranding: 1,
                     playsinline: 1,
@@ -110,8 +117,14 @@ export default function YouTubeShort({ videoId, width, height }: YouTubeShortPro
                         if (data === STATE_PLAYING) {
                             setPlaying(true);
                         } else if (data === STATE_ENDED) {
-                            player?.seekTo(0, true);
-                            player?.playVideo();
+                            if (onEndedRef.current) {
+                                // Fade out so YouTube's end screen isn't visible during the swap.
+                                setPlaying(false);
+                                onEndedRef.current();
+                            } else {
+                                player?.seekTo(0, true);
+                                player?.playVideo();
+                            }
                         } else if (data === STATE_PAUSED) {
                             player?.playVideo();
                         }
@@ -132,15 +145,21 @@ export default function YouTubeShort({ videoId, width, height }: YouTubeShortPro
             player?.destroy();
             mountRef.current?.replaceChildren();
         };
-    }, [videoId, width, height]);
+    }, [videoId, playerWidth, height]);
 
     return (
         <div className="relative rounded-lg shadow-lg overflow-hidden bg-black" style={{ width, height }}>
             {/* Hidden until the first frame plays so YouTube's loading/play-button UI never shows. */}
             <div
                 ref={mountRef}
-                className="absolute left-0 transition-opacity duration-500"
-                style={{ width, height: height + CROP_PX * 2, top: -CROP_PX, opacity: playing ? 1 : 0 }}
+                className="absolute transition-opacity duration-500"
+                style={{
+                    width: playerWidth,
+                    height: height + CROP_PX * 2,
+                    top: -CROP_PX,
+                    left: (width - playerWidth) / 2,
+                    opacity: playing ? 1 : 0,
+                }}
             />
             {/* Swallows all pointer input so the video can't be paused, skipped or navigated. */}
             <div

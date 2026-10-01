@@ -1,8 +1,28 @@
+import { useEffect, useState } from "react";
+import VideoPicker from "../brainrot/VideoPicker";
 import YouTubeShort from "../brainrot/YouTubeShort";
+import { pickRandomVideo, videosInCategory, type BrainrotVideo } from "../brainrot/videos";
 import Clock from "../clock/Clock";
 import Notes from "../notes/Notes";
 
+const PLAYER_WIDTH = 354;
+const PLAYER_HEIGHT = 630;
+
 export default function BrainrotPage() {
+    const [video, setVideo] = useState<BrainrotVideo | null>(null);
+
+    // Picked after mount so the server-rendered HTML and the hydrated client agree.
+    useEffect(() => {
+        setVideo(pickRandomVideo());
+    }, []);
+
+    // When a video finishes, move on to a different one from the same category.
+    // Categories with a single video just replay it.
+    const playNextInCategory =
+        video && videosInCategory(video.category).length > 1
+            ? () => setVideo(pickRandomVideo({ category: video.category, excludeId: video.id }))
+            : undefined;
+
     return (
         <>
             <div className="lg:hidden flex h-screen items-center justify-center p-8 bg-gray-900">
@@ -26,7 +46,23 @@ export default function BrainrotPage() {
                 </div>
 
                 <div className="flex flex-col items-center">
-                    <YouTubeShort videoId="tCBOhczn6Ok" width={354} height={630} />
+                    {video ? (
+                        <div className="relative">
+                            <YouTubeShort
+                                videoId={video.id}
+                                orientation={video.orientation}
+                                width={PLAYER_WIDTH}
+                                height={PLAYER_HEIGHT}
+                                onEnded={playNextInCategory}
+                            />
+                            <VideoPicker current={video} onSelect={setVideo} />
+                        </div>
+                    ) : (
+                        <div
+                            className="rounded-lg shadow-lg bg-black"
+                            style={{ width: PLAYER_WIDTH, height: PLAYER_HEIGHT }}
+                        />
+                    )}
                 </div>
             </div>
         </>
