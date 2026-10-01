@@ -50,6 +50,9 @@ const RETRY_DELAY_MS = 1500;
 // YouTube draws its title bar, logo and end screen at the top/bottom edge of the iframe.
 // Making the iframe taller than the visible box pushes them into letterbox bars that get clipped.
 const CROP_PX = 90;
+// YouTube picks the stream quality from the player's pixel size, so the iframe is rendered
+// large enough for this resolution (on the video's short side) and scaled down to fit.
+const TARGET_RESOLUTION = 1080;
 
 let apiPromise: Promise<YTNamespace> | null = null;
 
@@ -73,6 +76,11 @@ function loadYouTubeApi(): Promise<YTNamespace> {
 export default function YouTubeShort({ videoId, width, height, orientation = "portrait", onEnded }: YouTubeShortProps) {
     // Landscape videos are rendered at full 16:9 size and center-cropped to fill the portrait box.
     const playerWidth = orientation === "landscape" ? Math.round((height * 16) / 9) : width;
+    const shortSide = orientation === "landscape" ? height : playerWidth;
+    // devicePixelRatio already counts toward quality on HiDPI screens, so only scale up the remainder.
+    const scale = Math.max(1, TARGET_RESOLUTION / (shortSide * (window.devicePixelRatio || 1)));
+    const frameWidth = Math.round(playerWidth * scale);
+    const frameHeight = Math.round((height + CROP_PX * 2) * scale);
     const mountRef = useRef<HTMLDivElement>(null);
     const [playing, setPlaying] = useState(false);
     // Kept in a ref so a new callback each render doesn't tear down the player.
@@ -94,8 +102,8 @@ export default function YouTubeShort({ videoId, width, height, orientation = "po
             if (cancelled) return;
             player = new YT.Player(target, {
                 videoId,
-                width: playerWidth,
-                height: height + CROP_PX * 2,
+                width: frameWidth,
+                height: frameHeight,
                 playerVars: {
                     autoplay: 1,
                     mute: 1, // browsers only allow autoplay when muted
@@ -145,19 +153,20 @@ export default function YouTubeShort({ videoId, width, height, orientation = "po
             player?.destroy();
             mountRef.current?.replaceChildren();
         };
-    }, [videoId, playerWidth, height]);
+    }, [videoId, frameWidth, frameHeight]);
 
     return (
         <div className="relative rounded-lg shadow-lg overflow-hidden bg-black" style={{ width, height }}>
             {/* Hidden until the first frame plays so YouTube's loading/play-button UI never shows. */}
             <div
                 ref={mountRef}
-                className="absolute transition-opacity duration-500"
+                className="absolute origin-top-left transition-opacity duration-500"
                 style={{
-                    width: playerWidth,
-                    height: height + CROP_PX * 2,
+                    width: frameWidth,
+                    height: frameHeight,
                     top: -CROP_PX,
                     left: (width - playerWidth) / 2,
+                    transform: `scale(${1 / scale})`,
                     opacity: playing ? 1 : 0,
                 }}
             />

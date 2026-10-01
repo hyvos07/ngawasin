@@ -25,7 +25,8 @@ export default function VideoPicker({ current, onSelect }: VideoPickerProps) {
             <button
                 type="button"
                 onClick={() => setOpen((value) => !value)}
-                className="pointer-events-auto absolute top-2 right-2 grid place-items-center w-8 h-8 rounded-full bg-black/45 text-white/85 backdrop-blur-sm transition hover:bg-black/65 hover:text-white cursor-pointer"
+                // Only visible while hovering the video (or while the list is open) so it doesn't cover it.
+                className={`pointer-events-auto absolute top-2 right-2 grid place-items-center w-8 h-8 rounded-full bg-black/45 text-white/85 backdrop-blur-sm transition hover:bg-black/65 hover:text-white focus-visible:opacity-100 cursor-pointer ${open ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
                 aria-label={open ? "Close categories" : "Choose category"}
                 title={open ? "Close categories" : "Choose category"}
             >

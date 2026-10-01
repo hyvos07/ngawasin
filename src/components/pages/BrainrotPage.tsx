@@ -39,7 +39,7 @@ export default function BrainrotPage() {
                 </div>
             </div>
 
-            <div className="hidden lg:flex h-screen p-4 justify-center items-center gap-12">
+            <div className="hidden lg:flex h-screen p-4 justify-center items-center gap-12 xl:gap-13 2xl:gap-14">
                 <div className="flex flex-col items-center text-4xl m-8 gap-8">
                     <Clock fontSize={200} />
                     <Notes fontSize={36} />
@@ -47,7 +47,7 @@ export default function BrainrotPage() {
 
                 <div className="flex flex-col items-center">
                     {video ? (
-                        <div className="relative">
+                        <div className="relative group">
                             <YouTubeShort
                                 videoId={video.id}
                                 orientation={video.orientation}
