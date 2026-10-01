@@ -1,3 +1,4 @@
+import YouTubeShort from "../brainrot/YouTubeShort";
 import Clock from "../clock/Clock";
 import Notes from "../notes/Notes";
 
@@ -25,15 +26,7 @@ export default function BrainrotPage() {
                 </div>
 
                 <div className="flex flex-col items-center">
-                    <iframe
-                        width="354"
-                        height="630"
-                        src="https://www.youtube.com/embed/tCBOhczn6Ok?autoplay=1&loop=1&playlist=tCBOhczn6Ok&controls=0&showinfo=0&rel=0&mute=1&vq=hd1080p"
-                        title="YouTube video player"
-                        allow="autoplay"
-                        allowFullScreen
-                        className="rounded-lg shadow-lg"
-                    ></iframe>
+                    <YouTubeShort videoId="tCBOhczn6Ok" width={354} height={630} />
                 </div>
             </div>
         </>
